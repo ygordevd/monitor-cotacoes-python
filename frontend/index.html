@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitor de Cotações | Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fonte moderna Inter do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Cabeçalho do Dashboard -->
+        <header class="header">
+            <div class="logo-title">
+                <span class="icon">📈</span>
+                <div>
+                    <h1>Monitor Financeiro</h1>
+                    <p>Acompanhamento de moedas em tempo real</p>
+                </div>
+            </div>
+            <button id="btn-atualizar" onclick="carregarCotacoes()">
+                <span class="btn-icon">🔄</span> Atualizar
+            </button>
+        </header>
+
+        <!-- Grid de Cards de Moedas -->
+        <main class="cards-grid">
+            
+            <!-- Card Dólar -->
+            <div class="card" id="card-dolar">
+                <div class="card-header">
+                    <span class="currency-symbol">$</span>
+                    <h2>Dólar Comercial</h2>
+                </div>
+                <div class="card-body">
+                    <div class="price">R$ <span id="valor-dolar">0,00</span></div>
+                    <div class="variation" id="var-dolar">0.00%</div>
+                </div>
+            </div>
+
+            <!-- Card Euro -->
+            <div class="card" id="card-euro">
+                <div class="card-header">
+                    <span class="currency-symbol">€</span>
+                    <h2>Euro</h2>
+                </div>
+                <div class="card-body">
+                    <div class="price">R$ <span id="valor-euro">0,00</span></div>
+                    <div class="variation" id="var-euro">0.00%</div>
+                </div>
+            </div>
+
+            <!-- Card Bitcoin -->
+            <div class="card" id="card-bitcoin">
+                <div class="card-header">
+                    <span class="currency-symbol">₿</span>
+                    <h2>Bitcoin</h2>
+                </div>
+                <div class="card-body">
+                    <div class="price">R$ <span id="valor-bitcoin">0,00</span></div>
+                    <div class="variation" id="var-bitcoin">0.00%</div>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Rodapé do Sistema -->
+        <footer class="footer">
+            <p>Status do Servidor: <span class="status-online">● Online (Flask backend)</span></p>
+            <p id="ultima-atualizacao">Aguardando atualização...</p>
+        </footer>
+    </div>
+
+    <!-- Script JavaScript para conectar com o Python -->
+    <script src="script.js"></script>
+</body>
+</html>
